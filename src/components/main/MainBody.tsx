@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, View, Image, TextInput } from 'react-native';
 
 //? My Component
-import BodyInput from './section/BodyInput';
-import AddBodyBookMark from './section/AddBodyBookMark';
-import BodyBookMark from './section/BodyBookMark';
+import BodyInput from './bodysection/BodyInput';
+import AddBodyBookMark from './bodysection/AddBodyBookMark';
+import BodyBookMark from './bodysection/BodyBookMark';
 
 const MainBody = () => {
   return (
@@ -22,9 +22,8 @@ const MainBody = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 8,
+    flex: 9,
     width: '90%',
-    justifyContent: 'center',
     alignItems: 'center',
   },
 

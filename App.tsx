@@ -9,27 +9,34 @@
  */
 
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //? My Components
-import MainHeader from './src/components/main/MainHeader';
-import MainBody from './src/components/main/MainBody';
+import MainScreen from './src/components/main/MainScreen';
+import SearchScreen from './src/components/search/SearchScreen';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <MainHeader />
-      <MainBody />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Main"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="Main" component={MainScreen} />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{
+            presentation: 'fullScreenModal',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;

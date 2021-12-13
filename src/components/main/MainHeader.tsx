@@ -12,14 +12,14 @@ const MainHeader = () => {
         }}>
         <Pressable style={styles.leftView}>
           <Text>
-            <Fontisto name="home" size={22} color="black" />
+            <Fontisto name="home" size={22} color="#a1a1a1" />
           </Text>
         </Pressable>
         <View style={styles.middleView}>
           <Text style={{ fontSize: 20 }}>리그 오브 레전드</Text>
         </View>
         <View style={styles.rightView}>
-          <Text style={{ fontSize: 20 }}>KR</Text>
+          <Text style={{ fontSize: 20, color: '#a1a1a1' }}>KR</Text>
         </View>
       </View>
     </>
@@ -28,7 +28,7 @@ const MainHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     width: '90%',
     flexDirection: 'row',
     justifyContent: 'space-between',
