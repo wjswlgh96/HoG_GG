@@ -2,11 +2,9 @@ import React from 'react';
 import { StyleSheet, Pressable, Text } from 'react-native';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+//? Navigate
 import { useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../../screens/RootStackParams';
-
-type searchScreenProp = NativeStackNavigationProp<RootStackParamList, 'Search'>;
+import { searchScreenProp } from '../../../screens/RootStackParams';
 
 const BodyInput = () => {
   const navigation = useNavigation<searchScreenProp>();

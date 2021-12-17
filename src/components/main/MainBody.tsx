@@ -1,21 +1,45 @@
 import React from 'react';
-import { StyleSheet, View, Image, TextInput } from 'react-native';
+import { StyleSheet, ScrollView, View, Image } from 'react-native';
 
 //? My Component
 import BodyInput from './bodysection/BodyInput';
-import AddBodyBookMark from './bodysection/AddBodyBookMark';
-import BodyBookMark from './bodysection/BodyBookMark';
+import BeforeAddMySelf from '../myself/BeforeAddMySelf';
+import MainMySelf from '../myself/MainMySelf';
+import MainBookMark from './MainBookMark';
+
+//? Redux
+import { RootState } from '../../redux/reducers';
+import { useSelector } from 'react-redux';
+import { User } from '../../redux/actions/types';
 
 const MainBody = () => {
+  const user: User[] = useSelector((state: RootState) => state.userReducer);
+
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.mainLogo}
-        source={require('../../images/Logo.png')}
-      />
-      <BodyInput />
-      <AddBodyBookMark />
-      <BodyBookMark />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}>
+        <Image
+          style={styles.mainLogo}
+          source={require('../../images/Logo.png')}
+        />
+        <BodyInput />
+        {user.filter(el => {
+          return el.myself === true;
+        }).length > 0 ? (
+          user.map(el => {
+            if (el.myself === true) {
+              return <MainMySelf key={el.id} user={el} />;
+            }
+
+            return;
+          })
+        ) : (
+          <BeforeAddMySelf />
+        )}
+        <MainBookMark />
+      </ScrollView>
     </View>
   );
 };
@@ -24,6 +48,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 9,
     width: '90%',
+  },
+
+  scrollView: {
+    width: '100%',
     alignItems: 'center',
   },
 

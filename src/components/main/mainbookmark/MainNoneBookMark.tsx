@@ -1,14 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const BodyBookMark = () => {
+const MainBodyNoneBookMark = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.headerView}>
-        <Text style={{ fontSize: 28, color: 'black', fontWeight: '800' }}>
-          즐겨찾기
-        </Text>
-      </View>
       <View style={styles.bodyView}>
         <Text style={{ fontSize: 18, color: '#a1a1a1' }}>
           {`아직 즐겨찾기한 소환사가 없습니다.
@@ -24,16 +19,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 
-  headerView: {
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    marginBottom: 30,
-  },
-
   bodyView: {
     justifyContent: 'center',
     alignItems: 'center',
   },
 });
 
-export default BodyBookMark;
+export default MainBodyNoneBookMark;

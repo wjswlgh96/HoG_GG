@@ -30,6 +30,7 @@
 		00E356EE1AD99517003FC87E /* HoG_GGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoG_GGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* HoG_GGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoG_GGTests.m; sourceTree = "<group>"; };
+		064915312768244100D8299A /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		06E3C8E727671624003EAE8E /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* HoG_GG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoG_GG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HoG_GG/AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		06E3C8E6276715FF003EAE8E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				064915312768244100D8299A /* Ionicons.ttf */,
 				06E3C8E727671624003EAE8E /* Fontisto.ttf */,
 			);
 			name = Fonts;

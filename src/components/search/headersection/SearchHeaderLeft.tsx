@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable } from 'react-native';
 
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
+//? Navigate
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../../screens/RootStackParams';
@@ -15,10 +16,13 @@ const SearchHeaderLeft = () => {
   const onPressOut = (): void => {
     navigation.goBack();
   };
+
   return (
     <View style={styles.container}>
-      <Pressable onPressOut={onPressOut}>
-        <Fontisto name="close-a" size={21} color="#a1a1a1" />
+      <Pressable
+        onPressOut={onPressOut}
+        style={{ backgroundColor: 'transparent' }}>
+        <Fontisto name="close-a" size={21} color="#717171" />
       </Pressable>
     </View>
   );

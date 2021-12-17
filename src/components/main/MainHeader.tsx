@@ -16,10 +16,18 @@ const MainHeader = () => {
           </Text>
         </Pressable>
         <View style={styles.middleView}>
-          <Text style={{ fontSize: 20 }}>리그 오브 레전드</Text>
+          <Text style={{ fontSize: 20, color: 'black' }}>리그 오브 레전드</Text>
         </View>
         <View style={styles.rightView}>
-          <Text style={{ fontSize: 20, color: '#a1a1a1' }}>KR</Text>
+          <Text
+            style={{
+              fontSize: 20,
+              color: '#a1a1a1',
+              textDecorationLine: 'underline',
+              textDecorationColor: '#a1a1a1',
+            }}>
+            KR
+          </Text>
         </View>
       </View>
     </>
