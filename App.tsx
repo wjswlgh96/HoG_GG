@@ -16,10 +16,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //? My Components
-import MainScreen from './src/components/main/MainScreen';
-import SearchScreen from './src/components/search/SearchScreen';
-import MySelfScreen from './src/components/myself/MySelfScreen';
-import SearchResultScreen from './src/components/searchresult/SearchResultScreen';
+import MainScreen from './src/components/screens/MainScreen';
+import SearchScreen from './src/components/screens/SearchScreen';
+import SelfRegisterScreen from './src/components/screens/SelfRegisterScreen';
+import UserTotalInfoScreen from './src/components/screens/UserTotalInfoScreen';
 
 const Stack = createNativeStackNavigator();
 const store = createStore(reducers);
@@ -35,9 +35,12 @@ const App = () => {
           }}>
           <Stack.Group>
             <Stack.Screen name="Main" component={MainScreen} />
-            <Stack.Screen name="Result" component={SearchResultScreen} />
             <Stack.Screen name="Search" component={SearchScreen} />
-            <Stack.Screen name="MySelf" component={MySelfScreen} />
+            <Stack.Screen name="SelfRegister" component={SelfRegisterScreen} />
+            <Stack.Screen
+              name="UserTotalInfo"
+              component={UserTotalInfoScreen}
+            />
           </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>

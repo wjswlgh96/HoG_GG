@@ -1,4 +1,13 @@
-import { UserState } from '../actions/types';
+import { UserState } from '../actions/@types';
+
+import {
+  ADD_USERINFO,
+  UPDATE_USERRANKINFO,
+  UPDATE_USERBOOKMARK,
+  UPDATE_USERSEARCHLIST,
+  ADD_USERSELFREGISTER,
+  DELETE_USERSELFREGISTER,
+} from '../../@types/models/user';
 
 export const initialState: UserState = [];
 
@@ -6,7 +15,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
   const userState: UserState = state;
 
   switch (action.type) {
-    case 'ADD_USER': {
+    case ADD_USERINFO: {
       if (userState.length !== 0) {
         let currIdx = 0;
         let checkUser = false;
@@ -19,7 +28,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
         });
 
         if (checkUser) {
-          userState[currIdx].showList = true;
+          userState[currIdx].searchList = true;
 
           const newState = userState[currIdx];
 
@@ -34,7 +43,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
       }
     }
 
-    case 'ADD_USERMYSELF': {
+    case ADD_USERSELFREGISTER: {
       if (userState.length !== 0) {
         let currIdx = 0;
         let checkUser = false;
@@ -47,7 +56,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
         });
 
         if (checkUser) {
-          userState[currIdx].myself = true;
+          userState[currIdx].selfRegister = true;
           userState[currIdx].bookmark = false;
 
           return [...userState];
@@ -59,7 +68,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
       }
     }
 
-    case 'DELETE_USERMYSELF': {
+    case DELETE_USERSELFREGISTER: {
       let currIdx = 0;
 
       userState.map((el, idx) => {
@@ -68,12 +77,12 @@ const userReducer = (state: UserState = initialState, action: any) => {
         }
       });
 
-      userState[currIdx].myself = action.payload.myself;
+      userState[currIdx].selfRegister = action.payload.selfRegister;
 
       return [...userState];
     }
 
-    case 'UPDATE_USERRANKINFO': {
+    case UPDATE_USERRANKINFO: {
       let currIdx = 0;
 
       userState.map((el, idx) => {
@@ -91,7 +100,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
       return [...userState];
     }
 
-    case 'UPDATE_USERBOOKMARK': {
+    case UPDATE_USERBOOKMARK: {
       let currIdx = 0;
 
       userState.map((el, idx) => {
@@ -105,7 +114,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
       return [...userState];
     }
 
-    case 'UPDATE_USERSHOWLIST': {
+    case UPDATE_USERSEARCHLIST: {
       let currIdx = 0;
 
       userState.map((el, idx) => {
@@ -114,7 +123,7 @@ const userReducer = (state: UserState = initialState, action: any) => {
         }
       });
 
-      userState[currIdx].showList = action.payload.showList;
+      userState[currIdx].searchList = action.payload.searchList;
 
       return [...userState];
     }

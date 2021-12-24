@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 import userReducer from './userReducer';
-import resultUserReducer from './resultUserReducer';
+import targetUserReducer from './targetUserReducer';
+import spellReducer from './spellReducer';
 
-const rootReducer = combineReducers({ userReducer, resultUserReducer });
+const rootReducer = combineReducers({
+  userReducer,
+  targetUserReducer,
+  spellReducer,
+});
 
 export default rootReducer;
 

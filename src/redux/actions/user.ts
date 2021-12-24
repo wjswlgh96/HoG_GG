@@ -1,48 +1,74 @@
+import { User } from './@types';
+
 import {
-  User,
-  updateUserShowListProps,
+  updateUserSearchListProps,
   updateUserBookMarkProps,
-  updateUserMyselfProps,
-} from './types';
+  updateUserSelfRegisterProps,
+  DELETE_USERMATCHINFO,
+} from '../../@types/models/user';
 
-export const addUser = (data: User) => {
-  return {
-    type: 'ADD_USER',
-    payload: data,
-  };
-};
+import {
+  ADD_USERINFO,
+  UPDATE_USERRANKINFO,
+  UPDATE_USERBOOKMARK,
+  UPDATE_USERSEARCHLIST,
+  UPDATE_USERMATCHINFO,
+  ADD_USERSELFREGISTER,
+  DELETE_USERSELFREGISTER,
+} from '../../@types/models/user';
 
-export const addUserMySelf = (data: any) => {
+export const addUserInfo = (data: User) => {
   return {
-    type: 'ADD_USERMYSELF',
-    payload: data,
-  };
-};
-
-export const deleteUserMySelf = (data: updateUserMyselfProps) => {
-  return {
-    type: 'DELETE_USERMYSELF',
+    type: ADD_USERINFO,
     payload: data,
   };
 };
 
 export const updateUserRankInfo = (data: any) => {
   return {
-    type: 'UPDATE_USERRANKINFO',
+    type: UPDATE_USERRANKINFO,
     payload: data,
   };
 };
 
 export const updateUserBookMark = (data: updateUserBookMarkProps) => {
   return {
-    type: 'UPDATE_USERBOOKMARK',
+    type: UPDATE_USERBOOKMARK,
     payload: data,
   };
 };
 
-export const updateUserShowList = (data: updateUserShowListProps) => {
+export const updateUserSearchList = (data: updateUserSearchListProps) => {
   return {
-    type: 'UPDATE_USERSHOWLIST',
+    type: UPDATE_USERSEARCHLIST,
+    payload: data,
+  };
+};
+
+export const updateUserMatchInfo = (data: any) => {
+  return {
+    type: UPDATE_USERMATCHINFO,
+    payload: data,
+  };
+};
+
+export const addUserSelfRegister = (data: any) => {
+  return {
+    type: ADD_USERSELFREGISTER,
+    payload: data,
+  };
+};
+
+export const deleteUserSelfRegister = (data: updateUserSelfRegisterProps) => {
+  return {
+    type: DELETE_USERSELFREGISTER,
+    payload: data,
+  };
+};
+
+export const deleteUserMatchInfo = (data: any) => {
+  return {
+    type: DELETE_USERMATCHINFO,
     payload: data,
   };
 };
